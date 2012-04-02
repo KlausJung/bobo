@@ -1518,6 +1518,9 @@ public class BoboTestCase extends TestCase {
 
         doTest(browser,browseRequest,7,null,new String[]{"1","3","5","2","4","7","6"});
         
+        browseRequest.setSort(new SortField[]{new SortField(null,SortField.DOC,true)});
+        doTest(browser,browseRequest,7,null,new String[]{"7","6","5","4","3","2","1"});
+        
       }
       catch(IOException ioe){
         if (srcReader!=null){

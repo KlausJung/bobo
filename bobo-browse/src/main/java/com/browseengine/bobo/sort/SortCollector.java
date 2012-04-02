@@ -172,7 +172,7 @@ public abstract class SortCollector extends Collector {
 	
 	private static DocComparatorSource getComparatorSource(Browsable browser,SortField sf){
 		DocComparatorSource compSource = null;
-		if (SortField.FIELD_DOC.equals(sf)){
+		if (SortField.FIELD_DOC.equals(sf) || sf.getType() == SortField.DOC){
 			compSource = new DocIdDocComparatorSource();
 		}
 		else if (SortField.FIELD_SCORE.equals(sf) || sf.getType() == SortField.SCORE){
